@@ -1,16 +1,17 @@
 import React from 'react';
-import {SafeAreaView, useColorScheme} from 'react-native';
-
-import {Colors} from 'react-native/Libraries/NewAppScreen';
+import {SafeAreaView} from 'react-native';
+import {Test} from './src/View/Screens/Test';
+import {Provider} from 'react-redux';
+import {store} from './src/Adapter/Redux/Store';
 
 function App(): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
-  return <SafeAreaView style={backgroundStyle}></SafeAreaView>;
+  return (
+    <Provider store={store}>
+      <SafeAreaView>
+        <Test />
+      </SafeAreaView>
+    </Provider>
+  );
 }
 
 export default App;

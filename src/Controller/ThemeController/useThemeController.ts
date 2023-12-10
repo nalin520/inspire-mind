@@ -1,4 +1,4 @@
-import {useSelector} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import {RootState} from '../../Adapter/Redux/Store';
 import {themeSlice} from './themeSlice';
 
@@ -11,11 +11,12 @@ export const useThemeController = () => {
   const currentTheme = useSelector(
     (state: RootState) => state.theme.defaultTheme,
   );
+  const dispatch = useDispatch();
   const getCurrentTheme = () => {
     return currentTheme;
   };
   const changeCurrentTheme = (updatedTheme: THEMES) => {
-    themeAction.setTheme(updatedTheme);
+    dispatch(themeAction.setTheme(updatedTheme));
   };
   return {
     getCurrentTheme,

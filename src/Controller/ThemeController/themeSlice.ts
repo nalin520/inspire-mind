@@ -19,3 +19,4 @@ export const themeSlice = createSlice({
     },
   },
 });
+export default themeSlice.reducer;
