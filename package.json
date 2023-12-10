@@ -11,7 +11,9 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.0.1",
+    "i18next": "^23.7.8",
     "react": "18.2.0",
+    "react-i18next": "^13.5.0",
     "react-native": "0.73.0",
     "react-native-asset": "^2.1.1",
     "react-native-linear-gradient": "^2.8.3",
