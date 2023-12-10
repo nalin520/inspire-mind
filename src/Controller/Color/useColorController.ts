@@ -4,7 +4,7 @@ import {dark} from './dark';
 import {
   THEMES,
   useThemeController,
-} from '../ThemeController/useThemeController';
+} from '../Theme/useThemeController';
 import {ColorName} from './ColorName';
 import {ColorValue} from 'react-native';
 

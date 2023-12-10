@@ -4,7 +4,7 @@ import React from 'react';
 import {
   THEMES,
   useThemeController,
-} from '../../Controller/ThemeController/useThemeController';
+} from '../../Controller/Theme/useThemeController';
 import {useColorController} from '../../Controller/Color/useColorController';
 
 export const Test = () => {
