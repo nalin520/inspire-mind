@@ -1,12 +1,9 @@
 import {configureStore} from '@reduxjs/toolkit';
-
-import {colorsSlice} from '../../Controller/Color/colorSlice';
 import {themeSlice} from '../../Controller/ThemeController/themeSlice';
 
 export const store = configureStore({
   reducer: {
     theme: themeSlice.reducer,
-    color: colorsSlice.reducer,
   },
 });
 

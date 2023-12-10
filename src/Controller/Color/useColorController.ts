@@ -1,37 +1,29 @@
 import {useEffect, useState} from 'react';
 import {THEMES, useThemeController} from '../Theme/useThemeController';
-import {useSelector} from 'react-redux';
-import {RootState} from '../../Adapter/Redux/Store';
-import {colorsSlice} from './colorSlice';
+import {light} from './light';
+import {ColorName} from './colorName';
+import {dark} from './dark';
 
-export enum ColorName {
-  primary_001 = 'primary_001',
-  primary_002 = 'primary_002',
-
-  secondary_001 = 'secondary_001',
-  secondary_002 = 'secondary_002',
-
-  danger_001 = 'danger_001',
-  danger_002 = 'danger_002',
-}
-
-const COLOR_COMBINATION = [
-  ['COLOR_NAME', THEMES.light, THEMES.dark],
-  [ColorName.primary_001, '#000000', '#887744'],
-  [ColorName.primary_001, '#f54842', '#885569'],
-];
+export let getColor = (colorName: ColorName) =>
+  console.log(
+    `Please register useColorController in app.ts file.\nThis color is ${colorName}`,
+  );
 
 export const useColorController = () => {
-  const colors = useSelector((state: RootState) => state.color);
-  const colorsAction = colorsSlice.actions;
   const theme = useThemeController();
+  const [colors, setColors] = useState(light);
 
   useEffect(() => {
+    //register getCurrentColor registered
+    getColor = getCurrentColor;
     if (theme.getCurrentTheme() === THEMES.dark) {
+      setColors(dark);
+    } else {
+      setColors(light);
     }
   }, [theme.getCurrentTheme()]);
 
-  const getColor = (colorName: ColorName) => {
+  const getCurrentColor = (colorName: ColorName) => {
     return colors[colorName];
   };
 };
