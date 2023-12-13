@@ -4,8 +4,8 @@ import {Background} from '../../Components/Background';
 import {BlankSpacer} from '../../Components/BlankSpacer';
 import {NativeText} from '../../Components/NativeText';
 import React from 'react';
-import {View, StyleSheet} from 'react-native';
-export const Welcome = () => {
+import {View, StyleSheet, TouchableOpacity} from 'react-native';
+export const Welcome = ({navigation}) => {
   return (
     <>
       <Background>
@@ -18,7 +18,9 @@ export const Welcome = () => {
           <NativeText text={lngKey.QuoteBy} style={styles.QuoteBy} />
         </View>
       </Background>
-      <NativeText text={lngKey.Skip} style={styles.Skip} />
+      <TouchableOpacity onPress={() => navigation?.navigate('Login')}>
+        <NativeText text={lngKey.Skip} style={styles.Skip} />
+      </TouchableOpacity>
     </>
   );
 };

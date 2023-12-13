@@ -1,11 +1,18 @@
 //import liraries
 import React, {Component} from 'react';
-import {View, Text, StyleSheet, Image, ScrollView} from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  Image,
+  ScrollView,
+  TouchableOpacity,
+} from 'react-native';
 import CustomInput from '../../Components/CustomInput';
 import Button from '../../Components/Button';
 
 // create a component
-const Login = () => {
+const Login = ({navigation}) => {
   return (
     <>
       <ScrollView style={styles.container}>
@@ -56,22 +63,29 @@ const Login = () => {
         </View>
         <CustomInput placeholder={'Email....'} />
         <CustomInput placeholder={'Password....'} />
-        <Text
-          style={{
-            textAlign: 'right',
-            marginVertical: 2,
-            color: '#9C9C9C',
-            marginBottom: '10%',
-          }}>
-          Forgot Password?
-        </Text>
-        <Button btnText={'Next'} />
+        <TouchableOpacity
+          onPress={() => navigation?.navigate('ForgotPassword')}>
+          <Text
+            style={{
+              textAlign: 'right',
+              marginVertical: 2,
+              color: '#9C9C9C',
+              marginBottom: '10%',
+            }}>
+            Forgot Password?
+          </Text>
+        </TouchableOpacity>
+        <Button
+          onPress={() => navigation.navigate('BasicInformation')}
+          btnText={'Next'}
+        />
         <View
           style={{flexDirection: 'row', alignSelf: 'center', marginTop: '10%'}}>
           <Text style={{fontFamily: 'Inter-Bold', color: '#424242'}}>
             New to Inspire mind{`  `}
           </Text>
           <Text
+            onPress={() => navigation?.navigate('SignUp')}
             style={{
               borderBottomWidth: 1,
               borderColor: '#2A2EEC',

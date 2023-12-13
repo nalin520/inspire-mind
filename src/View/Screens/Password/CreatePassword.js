@@ -6,7 +6,7 @@ import CustomInput from '../../Components/CustomInput';
 import Button from '../../Components/Button';
 
 // create a component
-const CreatePassword = () => {
+const CreatePassword = ({navigation}) => {
   return (
     <>
       <CustomHeader />
@@ -14,7 +14,10 @@ const CreatePassword = () => {
         <Text style={styles.loginText}>Create a New{'\n'}Password</Text>
         <CustomInput placeholder={'Enter Password'} />
         <CustomInput placeholder={'Confirm Password'} />
-        <Button btnText={'Submit'} />
+        <Button
+          onPress={() => navigation?.navigate('Login')}
+          btnText={'Submit'}
+        />
       </View>
       <View
         style={{

@@ -1,12 +1,14 @@
 //import liraries
 import React, {Component} from 'react';
 import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native';
+import {useNavigation} from '@react-navigation/native';
 
 // create a component
 const CustomHeader = () => {
+  const navigation = useNavigation();
   return (
     <View style={styles.container}>
-      <TouchableOpacity>
+      <TouchableOpacity onPress={() => navigation.goBack()}>
         <Image
           style={{height: 40, width: 40}}
           source={require('../../Assets/Img/left-arrow.png')}

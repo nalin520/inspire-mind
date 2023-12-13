@@ -17,7 +17,7 @@ import CheckBox from '@react-native-community/checkbox';
 import OTPTextView from '../../Components/OTPTextView';
 
 // create a component
-const SignUp = () => {
+const SignUp = ({navigation}) => {
   const [toggleCheckBox, setToggleCheckBox] = useState(false);
   const [modalVisible, setModalVisible] = useState(false);
   return (
@@ -84,15 +84,7 @@ const SignUp = () => {
         <CustomInput placeholder={'Name....'} />
         <CustomInput placeholder={'Email....'} />
         <CustomInput placeholder={'Password....'} />
-        <Text
-          style={{
-            textAlign: 'right',
-            marginVertical: 2,
-            color: '#9C9C9C',
-            marginBottom: '10%',
-          }}>
-          Forgot Password?
-        </Text>
+
         <View style={{flexDirection: 'row', marginBottom: 18}}>
           <CheckBox
             disabled={false}
@@ -112,6 +104,7 @@ const SignUp = () => {
           style={{flexDirection: 'row', alignSelf: 'center', marginTop: '10%'}}>
           <Text style={{color: '#424242'}}>Already have an account?{`  `}</Text>
           <Text
+            onPress={() => navigation?.navigate('Login')}
             style={{
               borderBottomWidth: 1,
               borderColor: '#2A2EEC',
@@ -207,7 +200,9 @@ const SignUp = () => {
               style={{textAlign: 'center', marginTop: 10, color: '#424242'}}>
               00:59
             </Text>
-            <TouchableOpacity style={styles.btn}>
+            <TouchableOpacity
+              onPress={() => navigation?.navigate('Login')}
+              style={styles.btn}>
               <Text
                 style={{color: '#fff', fontFamily: 'Inter-Bold', fontSize: 15}}>
                 Next
