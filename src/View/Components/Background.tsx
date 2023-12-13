@@ -22,7 +22,13 @@ export const Background: React.FC<PropsWithChildren> = prop => {
 
     //   <View style={{width: wp(90), height: hp(90)}}>{prop.children}</View>
     // </LinearGradient>
-    <View style={{width: wp(100), height: hp(100),backgroundColor:getColor(ColorName.primary_001), alignItems:'center'}}>
+    <View
+      style={{
+        width: wp(100),
+        height: hp(100),
+        backgroundColor: '#fff',
+        alignItems: 'center',
+      }}>
       <View style={{width: wp(90), height: hp(90)}}>{prop.children}</View>
     </View>
   );
