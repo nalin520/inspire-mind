@@ -1,10 +1,7 @@
 import {useEffect, useState} from 'react';
 import {light} from './light';
 import {dark} from './dark';
-import {
-  THEMES,
-  useThemeController,
-} from '../Theme/useThemeController';
+import {THEMES, useThemeController} from '../Theme/useThemeController';
 import {ColorName} from './ColorName';
 import {ColorValue} from 'react-native';
 
