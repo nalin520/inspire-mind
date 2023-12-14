@@ -3,10 +3,13 @@ import React, {Component} from 'react';
 import {View, Text, StyleSheet, TextInput} from 'react-native';
 
 // create a component
-const CustomInput = ({placeholder}) => {
+const CustomInput = ({placeholder, color}) => {
   return (
     <View>
-      <TextInput style={styles.container} placeholder={placeholder} />
+      <TextInput
+        style={[styles.container, {borderColor: color ? color : '#9C9C9C'}]}
+        placeholder={placeholder}
+      />
     </View>
   );
 };
@@ -19,7 +22,7 @@ const styles = StyleSheet.create({
     marginVertical: 10,
     borderRadius: 15,
     borderWidth: 1,
-    borderColor: '#9C9C9C',
+
     paddingHorizontal: 10,
   },
 });
