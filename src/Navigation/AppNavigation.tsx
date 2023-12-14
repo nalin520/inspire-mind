@@ -1,3 +1,4 @@
+import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 import {Welcome} from '../View/Screens/Welcome/Welcome';
 import Login from '../View/Screens/Login/Login';
@@ -11,7 +12,9 @@ const Stack = createStackNavigator();
 
 const AppNavigation = () => {
   return (
-    <Stack.Navigator screenOptions={{headerShown: false}}>
+    <Stack.Navigator
+      screenOptions={{headerShown: false}}
+      initialRouteName="Question">
       <Stack.Screen name="Welcome" component={Welcome} />
       <Stack.Screen name="Question" component={Question} />
       <Stack.Screen name="SignUp" component={SignUp} />
@@ -19,6 +22,7 @@ const AppNavigation = () => {
       <Stack.Screen name="ForgotPassword" component={ForgotPassword} />
       <Stack.Screen name="CreatePassword" component={CreatePassword} />
       <Stack.Screen name="BasicInformation" component={BasicInformation} />
+      {/* <Stack.Screen name="BasicInformation" component={BasicInformation} /> */}
     </Stack.Navigator>
   );
 };
