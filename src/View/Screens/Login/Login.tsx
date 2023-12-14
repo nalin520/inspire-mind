@@ -75,10 +75,7 @@ const Login = ({navigation}) => {
             Forgot Password?
           </Text>
         </TouchableOpacity>
-        <Button
-          onPress={() => navigation.navigate('BasicInformation')}
-          btnText={'Next'}
-        />
+        <Button onPress={() => navigation.navigate('Home')} btnText={'Next'} />
         <View
           style={{flexDirection: 'row', alignSelf: 'center', marginTop: '10%'}}>
           <Text style={{fontFamily: 'Inter-Bold', color: '#424242'}}>
