@@ -1,5 +1,4 @@
 import React from 'react';
-import {SafeAreaView, View} from 'react-native';
 import {Provider} from 'react-redux';
 import {store} from './src/Adapter/Redux/Store';
 
