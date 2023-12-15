@@ -61,7 +61,7 @@ const ProfileCard = ({showFollower}: IProfileCard) => {
 const styles = StyleSheet.create({
   root: {
     flex: 1,
-    width: '100%',
+    width: '50%',
     backgroundColor: 'white',
   },
   headerContainer: {

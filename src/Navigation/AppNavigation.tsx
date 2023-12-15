@@ -14,12 +14,14 @@ import EditProfile from '../View/Screens/Profile/EditProfile';
 import CustomizeStatus from '../View/Screens/Profile/CustomizeStatus';
 import SettingNotification from '../View/Screens/Profile/SettingNotification';
 import LoginAndEmail from '../View/Screens/Profile/LoginAndEmail';
+import ConsultationProfile from '../View/Screens/BookConsultation/ConsultationProfile';
+import MaterialTabViewStack from './MaterialTabView';
 const Stack = createStackNavigator();
 
 const AppNavigation = () => {
   return (
     <Stack.Navigator
-      initialRouteName="Welcome"
+      initialRouteName="Home"
       screenOptions={{headerShown: false}}>
       <Stack.Screen name="Welcome" component={Welcome} />
       <Stack.Screen name="Question" component={Question} />
@@ -38,6 +40,10 @@ const AppNavigation = () => {
         component={SettingNotification}
       />
       <Stack.Screen name="LoginAndEmail" component={LoginAndEmail} />
+      <Stack.Screen
+        name="MaterialTabViewStack"
+        component={MaterialTabViewStack}
+      />
     </Stack.Navigator>
   );
 };

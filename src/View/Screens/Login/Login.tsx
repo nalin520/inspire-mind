@@ -91,7 +91,7 @@ const Login = ({navigation}) => {
             Sign up for free
           </Text>
         </View>
-        <View></View>
+        <View style={{paddingBottom: 30}} />
       </ScrollView>
       <View
         style={{
