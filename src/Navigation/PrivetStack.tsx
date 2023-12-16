@@ -18,19 +18,31 @@ import LoginAndEmail from '../View/Screens/Profile/LoginAndEmail';
 import MaterialTabViewStack from './MaterialTabView';
 import SleepTab from './SleepTab';
 import Details from '../View/Screens/Sleep/Details';
-import PrivetStack from './PrivetStack';
-import PublicStack from './PublicStack';
 const Stack = createStackNavigator();
 
-const AppNavigation = () => {
+const PrivetStack = () => {
   return (
     <Stack.Navigator
-      initialRouteName="privetStack"
+      initialRouteName="sleep_tab"
       screenOptions={{headerShown: false}}>
       <Stack.Screen name="welcome" component={Welcome} />
-      <Stack.Screen name="privetStack" component={PrivetStack} />
-      <Stack.Screen name="publicStack" component={PublicStack} />
+      <Stack.Screen name="home" component={Home} />
+      <Stack.Screen name="profile_account" component={Account} />
+      <Stack.Screen name="profile_setting" component={Setting} />
+      <Stack.Screen name="profile_edit" component={EditProfile} />
+      <Stack.Screen
+        name="profile_customizestatus"
+        component={CustomizeStatus}
+      />
+      <Stack.Screen
+        name="profile_notification"
+        component={SettingNotification}
+      />
+      <Stack.Screen name="profile_login_email" component={LoginAndEmail} />
+      <Stack.Screen name="consultant_tab" component={MaterialTabViewStack} />
+      <Stack.Screen name="sleep_tab" component={SleepTab} />
+      <Stack.Screen name="details" component={Details} />
     </Stack.Navigator>
   );
 };
-export default AppNavigation;
+export default PrivetStack;

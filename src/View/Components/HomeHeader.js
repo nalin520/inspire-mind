@@ -21,8 +21,7 @@ const HomeHeader = () => {
           justifyContent: 'space-between',
           alignSelf: 'center',
         }}>
-        <TouchableOpacity
-          onPress={() => navigation.navigate('MaterialTabViewStack')}>
+        <TouchableOpacity onPress={() => navigation.navigate('SleepTab')}>
           <Image
             style={{height: 20, width: 20}}
             source={require('../../Assets/Img/bell.png')}

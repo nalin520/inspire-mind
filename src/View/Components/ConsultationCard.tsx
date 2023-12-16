@@ -1,4 +1,5 @@
 //import liraries
+import {useNavigation} from '@react-navigation/native';
 import React from 'react';
 import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
@@ -8,22 +9,37 @@ interface IConsultationCard {
   rating: string;
   title: string;
   tags: string[];
+  value: string;
+  bookmarkColor: string;
+  videoText: string;
+  onPress: any;
 }
 
-const ConsultationCard = ({rating, tags, title}: IConsultationCard) => {
+const ConsultationCard = ({
+  rating,
+  tags,
+  title,
+  value,
+  bookmarkColor,
+  videoText,
+  onPress,
+}: IConsultationCard) => {
   return (
-    <View style={styles.container}>
+    <TouchableOpacity onPress={onPress} style={styles.container}>
       <View style={styles.imgContainer}>
         <Image source={require('../../Assets/Img/videoImage.png')} />
-        <View style={styles.playIconContainer}>
-          <Ionicons name="play-outline" size={20} color="#fff" />
-        </View>
+        {!value && (
+          <View style={styles.playIconContainer}>
+            <Ionicons name="play-outline" size={20} color="#fff" />
+          </View>
+        )}
       </View>
 
       <View style={styles.content}>
         <Text>
           <Ionicons name="star" color={'gray'} />
           <Text style={styles.rating}>{rating}</Text>
+          <Text style={styles.rating}>{` . ${videoText}`}</Text>
         </Text>
         <Text numberOfLines={1} style={styles.title}>
           {title}
@@ -35,11 +51,15 @@ const ConsultationCard = ({rating, tags, title}: IConsultationCard) => {
             </TouchableOpacity>
           ))}
         </View>
-        <View style={styles.bookmarkIconContainer}>
+        <View
+          style={[
+            styles.bookmarkIconContainer,
+            {borderColor: bookmarkColor ? bookmarkColor : 'gray'},
+          ]}>
           <Ionicons name="bookmark-outline" size={18} color={'gray'} />
         </View>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 
@@ -103,7 +123,7 @@ const styles = StyleSheet.create({
     width: 32,
     height: 32,
     borderRadius: 20,
-    borderColor: 'gray',
+
     borderWidth: 1,
     position: 'absolute',
     top: 4,
