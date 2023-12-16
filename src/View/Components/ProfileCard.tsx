@@ -60,9 +60,7 @@ const ProfileCard = ({showFollower}: IProfileCard) => {
 
 const styles = StyleSheet.create({
   root: {
-    flex: 1,
-    width: '50%',
-    backgroundColor: 'white',
+    width: '100%',
   },
   headerContainer: {
     gap: 20,
@@ -127,7 +125,7 @@ const styles = StyleSheet.create({
     textTransform: 'uppercase',
   },
   followContainer: {
-    marginTop: 24,
+    marginTop: 16,
     flexDirection: 'row',
   },
   followItem: {

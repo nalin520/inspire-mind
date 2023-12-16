@@ -14,7 +14,7 @@ import EditProfile from '../View/Screens/Profile/EditProfile';
 import CustomizeStatus from '../View/Screens/Profile/CustomizeStatus';
 import SettingNotification from '../View/Screens/Profile/SettingNotification';
 import LoginAndEmail from '../View/Screens/Profile/LoginAndEmail';
-import ConsultationProfile from '../View/Screens/BookConsultation/ConsultationProfile';
+// import ConsultationProfile from '../View/Screens/BookConsultation/ConsultationProfile';
 import MaterialTabViewStack from './MaterialTabView';
 const Stack = createStackNavigator();
 

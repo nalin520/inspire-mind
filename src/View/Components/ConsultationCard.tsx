@@ -1,90 +1,43 @@
 //import liraries
-import React, {Component} from 'react';
+import React from 'react';
 import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 // create a component
-const ConsultationCard = ({video}) => {
+
+interface IConsultationCard {
+  rating: string;
+  title: string;
+  tags: string[];
+}
+
+const ConsultationCard = ({rating, tags, title}: IConsultationCard) => {
   return (
     <View style={styles.container}>
-      <View>
-        <Image
-          //   style={{height: 120, width: 120, resizeMode: 'contain'}}
-          source={require('../../Assets/Img/videoImage.png')}
-        />
-        <Ionicons
-          name="play-outline"
-          size={25}
-          color={'#fff'}
-          style={{position: 'absolute', bottom: 3, left: 4}}
-        />
-      </View>
-      <View style={{marginLeft: 12}}>
-        <Text>
-          <Ionicons name="star" color={'gray'} />{' '}
-          <Text style={{color: 'gray', fontSize: 13}}>4.5</Text>{' '}
-          <Text>{video}</Text>
-        </Text>
-        <Text
-          numberOfLines={1}
-          style={{
-            fontFamily: 'Inter-Bold',
-            color: '#424242',
-            fontSize: 15,
-            width: '60%',
-          }}>
-          Relaxtion & Sleep
-        </Text>
-        <View
-          style={{
-            width: '65%',
-            flexDirection: 'row',
-            justifyContent: 'space-between',
-            marginTop: 5,
-          }}>
-          <TouchableOpacity
-            style={{
-              paddingHorizontal: 5,
-              paddingVertical: 5,
-              backgroundColor: '#D8E6F3',
-              borderRadius: 5,
-            }}>
-            <Text
-              style={{
-                fontSize: 11,
-                color: 'black',
-                fontFamily: 'Inter-Medium',
-              }}>
-              Yoga
-            </Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={{
-              paddingHorizontal: 5,
-              paddingVertical: 5,
-              backgroundColor: '#D8E6F3',
-              borderRadius: 5,
-            }}>
-            <Text
-              style={{
-                fontSize: 11,
-                color: 'black',
-                fontFamily: 'Inter-Medium',
-              }}>
-              Meditaion
-            </Text>
-          </TouchableOpacity>
+      <View style={styles.imgContainer}>
+        <Image source={require('../../Assets/Img/videoImage.png')} />
+        <View style={styles.playIconContainer}>
+          <Ionicons name="play-outline" size={20} color="#fff" />
         </View>
-        <Image
-          style={{
-            position: 'absolute',
-            height: 35,
-            width: 35,
-            resizeMode: 'contain',
-            top: 0,
-            right: '10%',
-          }}
-          source={require('../../Assets/Img/consult.png')}
-        />
+      </View>
+
+      <View style={styles.content}>
+        <Text>
+          <Ionicons name="star" color={'gray'} />
+          <Text style={styles.rating}>{rating}</Text>
+        </Text>
+        <Text numberOfLines={1} style={styles.title}>
+          {title}
+        </Text>
+        <View style={styles.chipContainer}>
+          {tags?.map(tag => (
+            <TouchableOpacity style={styles.chip} key={tag}>
+              <Text style={styles.chipText}>{tag}</Text>
+            </TouchableOpacity>
+          ))}
+        </View>
+        <View style={styles.bookmarkIconContainer}>
+          <Ionicons name="bookmark-outline" size={18} color={'gray'} />
+        </View>
       </View>
     </View>
   );
@@ -93,12 +46,70 @@ const ConsultationCard = ({video}) => {
 // define your styles
 const styles = StyleSheet.create({
   container: {
-    // flex: 1,
-    // justifyContent: 'center',
-    alignItems: 'center',
     backgroundColor: '#fff',
     flexDirection: 'row',
-    marginBottom: 10,
+    gap: 14,
+  },
+  imgContainer: {
+    position: 'relative',
+    height: 90,
+    width: 113,
+    borderRadius: 10,
+    overflow: 'hidden',
+  },
+  playIconContainer: {
+    height: 32,
+    width: 32,
+    borderRadius: 8,
+    alignItems: 'center',
+    justifyContent: 'center',
+    position: 'absolute',
+    bottom: 6,
+    left: 6,
+    backgroundColor: 'rgba(0,0,0,0.5)',
+  },
+  content: {
+    flex: 1,
+  },
+  rating: {
+    color: '#9c9c9c',
+    fontSize: 13,
+  },
+  title: {
+    fontFamily: 'Inter-Bold',
+    color: '#424242',
+    fontSize: 15,
+    marginBottom: 4,
+  },
+  chipContainer: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    gap: 4,
+    alignItems: 'center',
+  },
+  chip: {
+    paddingVertical: 5,
+    paddingHorizontal: 8,
+    backgroundColor: '#D8E6F3',
+    borderRadius: 5,
+  },
+  chipText: {
+    fontFamily: 'Inter-Medium',
+    fontSize: 11,
+    fontWeight: '500',
+    color: 'black',
+  },
+  bookmarkIconContainer: {
+    width: 32,
+    height: 32,
+    borderRadius: 20,
+    borderColor: 'gray',
+    borderWidth: 1,
+    position: 'absolute',
+    top: 4,
+    right: 5,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });
 

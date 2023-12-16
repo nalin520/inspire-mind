@@ -1,16 +1,9 @@
 //import liraries
-import React, {Component} from 'react';
-import {
-  View,
-  Text,
-  StyleSheet,
-  TouchableOpacity,
-  Image,
-  ScrollView,
-} from 'react-native';
-import ConsultationCard from '../../Components/ConsultationCard';
+import React from 'react';
+import {View, Text, StyleSheet, ScrollView} from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import Entypo from 'react-native-vector-icons/Entypo';
+import AntDesign from 'react-native-vector-icons/AntDesign';
+
 // create a component
 const DATA = [
   {
@@ -47,45 +40,28 @@ const DATA = [
 const Testimonial = () => {
   return (
     <ScrollView style={styles.container}>
-      {/* <ConsultationCard /> */}
-      {DATA.map(item => (
-        <View
-          style={{
-            backgroundColor: '#EFF7FF',
-            padding: 10,
-            borderRadius: 10,
-            marginBottom: 10,
-          }}>
-          <Image
-            style={{
-              // height: 80,
-              // width: 80,
-              // resizeMode: 'contain',
-              // marginTop: -30,
-              marginBottom: 10,
-            }}
-            source={require('../../../Assets/Img/rating.png')}
-          />
-          <Text
-            style={{
-              fontSize: 14,
-              color: 'black',
-              fontFamily: 'Inter-Medium',
-            }}>
-            A Board Certified Family Doctor with seven years of clinical
-            experience, specializing in patient care, case management, family
-            medicine, and communication.
-          </Text>
-          <View
-            style={{flexDirection: 'row', alignItems: 'center', marginTop: 5}}>
-            <Ionicons name="person-outline" size={18} />
-            <Text style={{fontFamily: 'Inter-Bold', color: '#424242'}}>
-              {` `} Jhon Doe
+      <View style={styles.list}>
+        {DATA.map(item => (
+          <View key={item.id} style={styles.card}>
+            <View style={styles.ratingContainer}>
+              <Ionicons name="star" size={18} color="#ffce00" />
+              <Ionicons name="star" size={18} color="#ffce00" />
+              <Ionicons name="star" size={18} color="#ffce00" />
+              <Ionicons name="star" size={18} color="#ffce00" />
+              <Ionicons name="star" size={18} color="#5c5c5c" />
+            </View>
+            <Text style={styles.content}>
+              A Board Certified Family Doctor with seven years of clinical
+              experience, specializing in patient care, case management, family
+              medicine, and communication.
             </Text>
+            <View style={styles.userContainer}>
+              <AntDesign name="user" size={16} color="#5c5c5c" />
+              <Text style={styles.userName}>Jhon Doe</Text>
+            </View>
           </View>
-        </View>
-      ))}
-      <View style={{paddingBottom: 30}} />
+        ))}
+      </View>
     </ScrollView>
   );
 };
@@ -94,10 +70,40 @@ const Testimonial = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // justifyContent: 'center',
-    // alignItems: 'center',
-    padding: 15,
     backgroundColor: '#fff',
+    paddingHorizontal: 16,
+  },
+  list: {
+    gap: 10,
+    paddingVertical: 16,
+  },
+  card: {
+    paddingHorizontal: 20,
+    paddingTop: 25,
+    paddingBottom: 20,
+    backgroundColor: '#EFF7FF',
+    borderRadius: 14,
+  },
+  ratingContainer: {
+    flexDirection: 'row',
+    gap: 4,
+    marginBottom: 14,
+  },
+  content: {
+    color: '#000000',
+    fontSize: 14,
+    lineHeight: 20,
+    marginBottom: 20,
+  },
+  userContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 4,
+  },
+  userName: {
+    fontFamily: 'Inter-Bold',
+    color: '#5c5c5c',
+    fontSize: 14,
   },
 });
 
