@@ -12,6 +12,7 @@ interface IConsultationCard {
   value: string;
   bookmarkColor: string;
   videoText: string;
+  playBtnColor: string;
   onPress: any;
 }
 
@@ -23,6 +24,7 @@ const ConsultationCard = ({
   bookmarkColor,
   videoText,
   onPress,
+  playBtnColor,
 }: IConsultationCard) => {
   return (
     <TouchableOpacity onPress={onPress} style={styles.container}>
@@ -30,7 +32,11 @@ const ConsultationCard = ({
         <Image source={require('../../Assets/Img/videoImage.png')} />
         {!value && (
           <View style={styles.playIconContainer}>
-            <Ionicons name="play-outline" size={20} color="#fff" />
+            <Ionicons
+              name="play-outline"
+              size={20}
+              color={playBtnColor ? playBtnColor : '#fff'}
+            />
           </View>
         )}
       </View>
@@ -39,7 +45,7 @@ const ConsultationCard = ({
         <Text>
           <Ionicons name="star" color={'gray'} />
           <Text style={styles.rating}>{rating}</Text>
-          <Text style={styles.rating}>{` . ${videoText}`}</Text>
+          {videoText && <Text style={styles.rating}>{` . ${videoText}`}</Text>}
         </Text>
         <Text numberOfLines={1} style={styles.title}>
           {title}

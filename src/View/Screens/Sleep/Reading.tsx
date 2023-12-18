@@ -65,7 +65,7 @@ const data2 = [
   },
 ];
 // create a component
-const Classes = ({navigation}) => {
+const Reading = ({navigation}) => {
   return (
     <ScrollView style={styles.container}>
       <ScrollView
@@ -125,4 +125,4 @@ const styles = StyleSheet.create({
 });
 
 //make this component available to the app
-export default Classes;
+export default Reading;

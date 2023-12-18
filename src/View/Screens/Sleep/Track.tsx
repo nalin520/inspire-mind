@@ -68,7 +68,10 @@ const data2 = [
 const Track = ({navigation}) => {
   return (
     <ScrollView style={styles.container}>
-      <ScrollView horizontal style={styles.btnContainer}>
+      <ScrollView
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        style={styles.btnContainer}>
         {data.map(item => (
           <TouchableOpacity style={styles.btnView}>
             <Text style={styles.btnText}>{item.name}</Text>
@@ -89,6 +92,7 @@ const Track = ({navigation}) => {
           />
         ))}
       </View>
+      <View style={{paddingBottom: 30}} />
     </ScrollView>
   );
 };
