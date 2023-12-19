@@ -6,8 +6,11 @@ import {
   StyleSheet,
   ScrollView,
   TouchableOpacity,
+  FlatList,
 } from 'react-native';
 import ConsultationCard from '../../Components/ConsultationCard';
+import ClacessCard from '../../Components/ClacessCard';
+import ProfileCard from '../../Components/ProfileCard';
 const data = [
   {
     id: 0,
@@ -73,24 +76,15 @@ const Classes = ({navigation}) => {
         showsHorizontalScrollIndicator={false}
         style={styles.btnContainer}>
         {data.map(item => (
-          <TouchableOpacity style={styles.btnView}>
+          <TouchableOpacity
+            style={styles.btnView}
+            key={item.id.toString()}
+            onPress={() => handleFilter(item.id)}>
             <Text style={styles.btnText}>{item.name}</Text>
           </TouchableOpacity>
         ))}
       </ScrollView>
-      <View style={styles.list}>
-        {data2.map(item => (
-          <ConsultationCard
-            key={item.id}
-            rating="4.5"
-            tags={item.tags}
-            title={item.name}
-            value={'true'}
-            bookmarkColor={'black'}
-            onPress={() => navigation?.navigate('details')}
-          />
-        ))}
-      </View>
+      <FlatList data={data2} renderItem={() => <ClacessCard />} />
       <View style={{paddingBottom: 30}} />
     </ScrollView>
   );

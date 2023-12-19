@@ -10,7 +10,7 @@ const CustomHeader = () => {
     <View style={styles.container}>
       <TouchableOpacity onPress={() => navigation.goBack()}>
         <Image
-          style={{height: 40, width: 40}}
+          style={{height: 30, width: 30}}
           source={require('../../Assets/Img/left-arrow.png')}
         />
       </TouchableOpacity>

@@ -13,6 +13,8 @@ interface IConsultationCard {
   bookmarkColor: string;
   videoText: string;
   playBtnColor: string;
+  bookmarkIconColor: string;
+  bookmarkBackgroundColor: string;
   onPress: any;
 }
 
@@ -25,6 +27,8 @@ const ConsultationCard = ({
   videoText,
   onPress,
   playBtnColor,
+  bookmarkBackgroundColor,
+  bookmarkIconColor,
 }: IConsultationCard) => {
   return (
     <TouchableOpacity onPress={onPress} style={styles.container}>
@@ -60,9 +64,18 @@ const ConsultationCard = ({
         <View
           style={[
             styles.bookmarkIconContainer,
-            {borderColor: bookmarkColor ? bookmarkColor : 'gray'},
+            {
+              borderColor: bookmarkColor ? bookmarkColor : 'gray',
+              backgroundColor: bookmarkBackgroundColor
+                ? bookmarkBackgroundColor
+                : '',
+            },
           ]}>
-          <Ionicons name="bookmark-outline" size={18} color={'gray'} />
+          <Ionicons
+            name="bookmark-outline"
+            size={18}
+            color={bookmarkIconColor ? bookmarkIconColor : 'gray'}
+          />
         </View>
       </View>
     </TouchableOpacity>

@@ -15,6 +15,7 @@ import {Color, FontFamily, FontSize} from '../../../styles/globalStyle';
 import RBSheet from 'react-native-raw-bottom-sheet';
 import {Dropdown} from 'react-native-element-dropdown';
 import Button from '../../Components/Button';
+import ProfileCard from '../../Components/ProfileCard';
 
 // create a component
 const data = [
@@ -60,7 +61,7 @@ const data2 = [
     tags: ['Yoga', 'Meditation'],
   },
 ];
-const Details = () => {
+const Details = ({navigation}) => {
   const [value, setValue] = useState(null);
   const [isFocus, setIsFocus] = useState(false);
   const [bottom, setBottom] = useState();
@@ -142,6 +143,7 @@ const Details = () => {
               <Ionicons name="bookmark-outline" size={18} color={'black'} />
             </TouchableOpacity>
             <TouchableOpacity
+              onPress={() => navigation?.navigate('sleep_track_player')}
               style={[
                 styles.bookmarkIconContainer,
                 {
@@ -175,7 +177,7 @@ const Details = () => {
           </TouchableOpacity>
           <View style={styles.divider} />
           <TouchableOpacity
-            onPress={() => bottomSheet('Donation')}
+            // onPress={() => bottomSheet('Donation')}
             style={styles.followItem}>
             <Feather name="moon" size={20} color={'#6E8DA3'} />
             <Text style={styles.followSubTitle}>Sleep</Text>
@@ -242,7 +244,7 @@ const Details = () => {
           style={[styles.title, {fontSize: 15, marginTop: 12}]}>
           Review
         </Text>
-        <ScrollView horizontal style={{width: '100%'}}>
+        <ScrollView horizontal showsHorizontalScrollIndicator={false}>
           {[1.1, 5, 4].map(item => (
             <View
               style={{
@@ -250,7 +252,7 @@ const Details = () => {
                 padding: 20,
                 borderRadius: 15,
                 marginTop: 10,
-                marginLeft: 5,
+                marginLeft: 9,
               }}>
               <View
                 style={{
@@ -321,6 +323,7 @@ const Details = () => {
           ))}
         </ScrollView>
       </View>
+      <ProfileCard showFollower />
 
       <RBSheet
         ref={refRBSheet}
@@ -455,8 +458,8 @@ const Details = () => {
           </>
         )}
         {bottom == 'download' && (
-          <>
-            {[0, 4, 4, , 5].map(() => (
+          <ScrollView>
+            {[0, 4, 4, , 5, 5, 5].map(() => (
               <TouchableOpacity
                 style={{
                   borderRadius: 8,
@@ -474,7 +477,7 @@ const Details = () => {
                 </Text>
               </TouchableOpacity>
             ))}
-          </>
+          </ScrollView>
         )}
       </RBSheet>
       <View style={{paddingBottom: 30}} />

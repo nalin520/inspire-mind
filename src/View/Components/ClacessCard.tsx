@@ -1,11 +1,11 @@
 //import liraries
 import React, {Component} from 'react';
 import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native';
-import {Color} from '../../styles/globalStyle';
+import {Color, FontFamily} from '../../styles/globalStyle';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 // create a component
-const SleepEventCard = () => {
+const ClacessCard = () => {
   return (
     <View style={styles.container}>
       <View>
@@ -26,8 +26,55 @@ const SleepEventCard = () => {
           </View>
         </View>
       </View>
-
-      <View style={styles.footerView}>
+      <View
+        style={{
+          flexDirection: 'row',
+          marginTop: -56,
+          marginLeft: 10,
+          marginBottom: 15,
+        }}>
+        <TouchableOpacity
+          style={{
+            paddingHorizontal: 15,
+            paddingVertical: 7,
+            backgroundColor: 'rgba(0, 0, 0, 0.68)',
+            borderRadius: 7,
+            marginRight: 7,
+          }}>
+          <Text
+            style={{
+              color: 'rgba(0, 0, 0, 1)',
+              fontSize: 11,
+              fontFamily: FontFamily.interRegular,
+            }}>
+            Yoga
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={{
+            paddingHorizontal: 15,
+            paddingVertical: 7,
+            backgroundColor: 'rgba(0, 0, 0, 0.6)',
+            borderRadius: 7,
+            marginRight: 7,
+          }}>
+          <Text
+            style={{
+              color: 'rgba(0, 0, 0, 1)',
+              fontSize: 11,
+              fontFamily: FontFamily.interRegular,
+            }}>
+            Meditaion
+          </Text>
+        </TouchableOpacity>
+      </View>
+      <Text>
+        <Ionicons size={12} name="star" color={'gray'} />
+        <Text style={styles.rating}>4.5</Text>
+        <Text style={styles.rating}>{` . 10 day Course`}</Text>
+      </Text>
+      <Text style={styles.text}>The Science of overcoming insomnia</Text>
+      {/* <View style={styles.footerView}>
         <View>
           <Text style={styles.text}>
             Bedtime Routine Ideas for A{'\n'}
@@ -41,7 +88,7 @@ const SleepEventCard = () => {
         <TouchableOpacity style={styles.btn}>
           <Text style={styles.btnText}>ATTEND</Text>
         </TouchableOpacity>
-      </View>
+      </View> */}
     </View>
   );
 };
@@ -54,9 +101,9 @@ const styles = StyleSheet.create({
     // alignItems: 'center',
     backgroundColor: '#fff',
     // alignSelf: 'center',
-    paddingHorizontal: 15,
+    // paddingHorizontal: 15,
     // paddingVertical: 20,
-    paddingBottom: 15,
+    paddingBottom: 10,
   },
   img: {
     width: '100%',
@@ -134,7 +181,17 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     padding: 5,
   },
+  rating: {
+    color: '#9c9c9c',
+    fontSize: 15,
+  },
+  title: {
+    fontFamily: 'Inter-Bold',
+    color: '#424242',
+    fontSize: 15,
+    marginBottom: 4,
+  },
 });
 
 //make this component available to the app
-export default SleepEventCard;
+export default ClacessCard;

@@ -1,11 +1,11 @@
 //import liraries
 import React, {Component} from 'react';
 import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native';
-import {Color} from '../../styles/globalStyle';
+import {Color, FontFamily} from '../../styles/globalStyle';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 // create a component
-const SleepEventCard = () => {
+const EventCourseCard = () => {
   return (
     <View style={styles.container}>
       <View>
@@ -22,17 +22,52 @@ const SleepEventCard = () => {
         </View>
         <View style={styles.bookmarkIconContainer}>
           <View style={styles.bookMark}>
-            <Ionicons name="bookmark-outline" size={18} color={'black'} />
+            <Ionicons name="bookmark-outline" size={18} color={'#fff'} />
           </View>
         </View>
       </View>
 
-      <View style={styles.footerView}>
+      <View
+        style={{
+          flexDirection: 'row',
+          alignItems: 'center',
+          marginTop: -67,
+          marginLeft: 5,
+        }}>
+        <Image
+          style={{
+            width: 50,
+            height: 50,
+            resizeMode: 'contain',
+            marginRight: 6,
+            // backgroundColor: 'red',
+          }}
+          source={require('../../Assets/Img/doctorphoto.png')}
+        />
         <View>
-          <Text style={styles.text}>
-            Bedtime Routine Ideas for A{'\n'}
-            Better Night's Sleep
+          <Text
+            style={{
+              fontFamily: 'Inter-SemiBold',
+              fontSize: 15,
+              color: '#fff',
+            }}>
+            John Due
           </Text>
+          <Text>
+            <Ionicons color={'#fff'} name="star" size={10} />
+            <Text
+              style={{
+                fontFamily: 'Inter-SemiBold',
+                fontSize: 10,
+                color: '#fff',
+              }}>
+              4.5
+            </Text>
+          </Text>
+        </View>
+
+        {/* <View>
+        //  
           <View style={styles.dateTextView}>
             <Text style={styles.dateText}>20 JULY 2023</Text>
             <Text style={styles.dateText}>09 : 30 PM</Text>
@@ -40,8 +75,17 @@ const SleepEventCard = () => {
         </View>
         <TouchableOpacity style={styles.btn}>
           <Text style={styles.btnText}>ATTEND</Text>
-        </TouchableOpacity>
+        </TouchableOpacity> */}
       </View>
+      <Text style={styles.text}>The Science of overcoming inover</Text>
+      <Text
+        style={{
+          fontSize: 13,
+          color: 'rgba(156, 156, 156, 1)',
+          fontFamily: FontFamily.interRegular,
+        }}>
+        10 day Course
+      </Text>
     </View>
   );
 };
@@ -56,7 +100,7 @@ const styles = StyleSheet.create({
     // alignSelf: 'center',
     paddingHorizontal: 15,
     // paddingVertical: 20,
-    paddingBottom: 15,
+    paddingBottom: 10,
   },
   img: {
     width: '100%',
@@ -66,9 +110,9 @@ const styles = StyleSheet.create({
   },
   text: {
     fontFamily: 'Inter-SemiBold',
-    fontSize: 15,
-    marginTop: 5,
+    fontSize: 16,
     color: 'black',
+    marginTop: 10,
   },
   footerView: {
     flexDirection: 'row',
@@ -130,11 +174,12 @@ const styles = StyleSheet.create({
     // width: 32,
     // height: 32,
     borderRadius: 20,
-    borderColor: 'black',
-    borderWidth: 1,
-    padding: 5,
+    // borderColor: 'black',
+    // borderWidth: 1,
+    padding: 8,
+    backgroundColor: Color.colorMediumblue,
   },
 });
 
 //make this component available to the app
-export default SleepEventCard;
+export default EventCourseCard;
