@@ -37,7 +37,7 @@ const data2 = [
   },
 ];
 // create a component
-const AllEvent = () => {
+const AllEvent = ({navigation}) => {
   return (
     <>
       <CustomHeader />
@@ -51,9 +51,17 @@ const AllEvent = () => {
         }}>
         Events
       </Text>
-      <ScrollView style={styles.container}>
-        <FlatList data={data2} renderItem={() => <AllEventCard />} />
-      </ScrollView>
+      <View style={styles.container}>
+        <FlatList
+          data={data2}
+          renderItem={() => (
+            <AllEventCard
+              onPress={() => navigation?.navigate('event_eventdetails')}
+            />
+          )}
+        />
+        <View style={{}} />
+      </View>
     </>
   );
 };
@@ -66,6 +74,7 @@ const styles = StyleSheet.create({
     // alignItems: 'center',
     backgroundColor: '#fff',
     paddingHorizontal: 15,
+    paddingBottom: 100,
   },
 });
 

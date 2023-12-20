@@ -27,7 +27,7 @@ const Stack = createStackNavigator();
 const PrivetStack = () => {
   return (
     <Stack.Navigator
-      initialRouteName="event_allEvent"
+      initialRouteName="sleep_tab"
       screenOptions={{headerShown: false}}>
       <Stack.Screen name="welcome" component={Welcome} />
       <Stack.Screen name="home" component={Home} />

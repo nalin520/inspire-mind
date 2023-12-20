@@ -128,7 +128,7 @@ const Details = ({navigation}) => {
             <Text>
               <Ionicons name="star" color={'gray'} />
               <Text style={styles.rating}>4.5</Text>
-              <Text style={styles.rating}>{` . 50 MIN`}</Text>
+              <Text style={styles.rating}>{` • 50 MIN`}</Text>
             </Text>
             <Text numberOfLines={1} style={styles.title}>
               Relaxtion & Sleep

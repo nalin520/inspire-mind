@@ -49,7 +49,7 @@ const ConsultationCard = ({
         <Text>
           <Ionicons name="star" color={'gray'} />
           <Text style={styles.rating}>{rating}</Text>
-          {videoText && <Text style={styles.rating}>{` . ${videoText}`}</Text>}
+          {videoText && <Text style={styles.rating}>{` • ${videoText}`}</Text>}
         </Text>
         <Text numberOfLines={1} style={styles.title}>
           {title}

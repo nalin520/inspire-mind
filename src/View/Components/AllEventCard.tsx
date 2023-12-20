@@ -6,10 +6,10 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import {useNavigation} from '@react-navigation/native';
 // create a component
-const AllEventCard = () => {
+const AllEventCard = ({onPress}) => {
   const navigation = useNavigation();
   return (
-    <View style={styles.container}>
+    <TouchableOpacity onPress={onPress} style={styles.container}>
       <View>
         <Image
           style={styles.img}
@@ -108,7 +108,7 @@ const AllEventCard = () => {
           <Text style={styles.ATTENDbtnText}>ATTEND</Text>
         </TouchableOpacity>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 
