@@ -6,9 +6,7 @@ import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 const Button = ({btnText, onPress}) => {
   return (
     <TouchableOpacity onPress={onPress} style={styles.container}>
-      <Text style={{color: '#fff', fontFamily: 'Inter-Bold', fontSize: 15}}>
-        {btnText}
-      </Text>
+      <Text style={styles.btnText}>{btnText}</Text>
     </TouchableOpacity>
   );
 };
@@ -27,6 +25,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     borderRadius: 10,
   },
+  btnText: {color: '#fff', fontFamily: 'Inter-Bold', fontSize: 15},
 });
 
 //make this component available to the app

@@ -27,42 +27,16 @@ const EventCourseCard = () => {
         </View>
       </View>
 
-      <View
-        style={{
-          flexDirection: 'row',
-          alignItems: 'center',
-          marginTop: -67,
-          marginLeft: 5,
-        }}>
+      <View style={styles.docImgView}>
         <Image
-          style={{
-            width: 50,
-            height: 50,
-            resizeMode: 'contain',
-            marginRight: 6,
-            // backgroundColor: 'red',
-          }}
+          style={styles.docImg}
           source={require('../../Assets/Img/doctorphoto.png')}
         />
         <View>
-          <Text
-            style={{
-              fontFamily: 'Inter-SemiBold',
-              fontSize: 15,
-              color: '#fff',
-            }}>
-            John Due
-          </Text>
+          <Text style={styles.jhoneDoeText}>John Due</Text>
           <Text>
             <Ionicons color={'#fff'} name="star" size={10} />
-            <Text
-              style={{
-                fontFamily: 'Inter-SemiBold',
-                fontSize: 10,
-                color: '#fff',
-              }}>
-              4.5
-            </Text>
+            <Text style={styles.rating}>4.5</Text>
           </Text>
         </View>
 
@@ -78,14 +52,7 @@ const EventCourseCard = () => {
         </TouchableOpacity> */}
       </View>
       <Text style={styles.text}>The Science of overcoming inover</Text>
-      <Text
-        style={{
-          fontSize: 13,
-          color: 'rgba(156, 156, 156, 1)',
-          fontFamily: FontFamily.interRegular,
-        }}>
-        10 day Course
-      </Text>
+      <Text style={styles.tenDay}>10 day Course</Text>
     </View>
   );
 };
@@ -178,6 +145,34 @@ const styles = StyleSheet.create({
     // borderWidth: 1,
     padding: 8,
     backgroundColor: Color.colorMediumblue,
+  },
+  docImgView: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginTop: -67,
+    marginLeft: 5,
+  },
+  docImg: {
+    width: 50,
+    height: 50,
+    resizeMode: 'contain',
+    marginRight: 6,
+    // backgroundColor: 'red',
+  },
+  jhoneDoeText: {
+    fontFamily: 'Inter-SemiBold',
+    fontSize: 15,
+    color: '#fff',
+  },
+  rating: {
+    fontFamily: 'Inter-SemiBold',
+    fontSize: 10,
+    color: '#fff',
+  },
+  tenDay: {
+    fontSize: 13,
+    color: 'rgba(156, 156, 156, 1)',
+    fontFamily: FontFamily.interRegular,
   },
 });
 

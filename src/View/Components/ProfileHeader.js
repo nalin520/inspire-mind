@@ -2,17 +2,14 @@
 import React, {Component} from 'react';
 import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
-
+import Ionicons from 'react-native-vector-icons/Ionicons';
 // create a component
 const ProfileHeader = ({onPress, source, name}) => {
   const navigation = useNavigation();
   return (
     <View style={styles.container}>
       <TouchableOpacity onPress={() => navigation.goBack()}>
-        <Image
-          style={{height: 30, width: 30}}
-          source={require('../../Assets/Img/left-arrow.png')}
-        />
+        <Ionicons name="arrow-back" size={25} color="black" />
       </TouchableOpacity>
       <Text style={{fontFamily: 'Inter-Bold', color: '#424242'}}>{name}</Text>
       <TouchableOpacity onPress={onPress}>
@@ -34,7 +31,8 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     paddingTop: 10,
     // borderTopColor: 1,
-    borderBottomWidth: 1,
+    borderBottomWidth: 0.5,
+    borderBottomColor: 'rgba(216, 230, 243, 1)',
     // alignItems: 'center',
     // backgroundColor: '#2c3e50',
   },

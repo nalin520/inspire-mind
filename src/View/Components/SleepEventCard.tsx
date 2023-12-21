@@ -4,6 +4,7 @@ import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native';
 import {Color} from '../../styles/globalStyle';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import {hp, wp} from '../../Adapter/ReactNativeResponsiveScreen/Responsive';
 // create a component
 const SleepEventCard = () => {
   return (
@@ -59,9 +60,10 @@ const styles = StyleSheet.create({
     paddingBottom: 15,
   },
   img: {
-    width: '100%',
-    height: 200,
+    width: wp(90),
     resizeMode: 'contain',
+    height: hp(30),
+    borderRadius: wp(2),
     // backgroundColor: 'red',
   },
   text: {

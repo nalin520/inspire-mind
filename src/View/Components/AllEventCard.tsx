@@ -23,54 +23,17 @@ const AllEventCard = ({onPress}) => {
           />
         </View>
       </View>
-      <View
-        style={{
-          flexDirection: 'row',
-          marginTop: -56,
-          marginLeft: 10,
-          marginBottom: 15,
-        }}>
-        <TouchableOpacity
-          style={{
-            paddingHorizontal: 15,
-            paddingVertical: 7,
-            backgroundColor: 'rgba(42, 46, 236, 1)',
-            borderRadius: 7,
-            marginRight: 7,
-          }}>
-          <Text
-            style={{
-              color: '#fff',
-              fontSize: 12,
-              fontFamily: FontFamily.interRegular,
-            }}>
+      <View style={styles.liveEventSec}>
+        <TouchableOpacity style={styles.liveEventBtn}>
+          <Text style={styles.liveEventText}>
             <Ionicons name="videocam-outline" size={14} /> Live Event
           </Text>
         </TouchableOpacity>
-        <TouchableOpacity
-          style={{
-            paddingHorizontal: 15,
-            paddingVertical: 7,
-            backgroundColor: 'rgba(255, 255, 255, 0.78)',
-            borderRadius: 7,
-            marginRight: 7,
-          }}>
-          <Text
-            style={{
-              color: 'rgba(0, 0, 0, 1)',
-              fontSize: 12,
-              fontFamily: FontFamily.interSemiBold,
-            }}>
-            Paid
-          </Text>
+        <TouchableOpacity style={styles.paidSec}>
+          <Text style={styles.paidText}>Paid</Text>
         </TouchableOpacity>
       </View>
-      <View
-        style={{
-          flexDirection: 'row',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-        }}>
+      <View style={styles.bookMarkSec}>
         <View>
           <Text>
             <Ionicons size={12} name="star" color={'gray'} />
@@ -89,13 +52,7 @@ const AllEventCard = ({onPress}) => {
           <Ionicons name="bookmark-outline" size={18} color={'black'} />
         </TouchableOpacity>
       </View>
-      <View
-        style={{
-          flexDirection: 'row',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          marginTop: 8,
-        }}>
+      <View style={styles.threeBtnSec}>
         <View style={styles.chipContainer}>
           <TouchableOpacity style={styles.chip}>
             <Text style={styles.chipText}>Meditation</Text>
@@ -239,6 +196,47 @@ const styles = StyleSheet.create({
     fontSize: 11,
     color: Color.colorWhite,
     fontWeight: '500',
+  },
+  liveEventSec: {
+    flexDirection: 'row',
+    marginTop: -56,
+    marginLeft: 10,
+    marginBottom: 15,
+  },
+  liveEventBtn: {
+    paddingHorizontal: 15,
+    paddingVertical: 7,
+    backgroundColor: 'rgba(42, 46, 236, 1)',
+    borderRadius: 7,
+    marginRight: 7,
+  },
+  liveEventText: {
+    color: '#fff',
+    fontSize: 12,
+    fontFamily: FontFamily.interRegular,
+  },
+  paidSec: {
+    paddingHorizontal: 15,
+    paddingVertical: 7,
+    backgroundColor: 'rgba(255, 255, 255, 0.78)',
+    borderRadius: 7,
+    marginRight: 7,
+  },
+  paidText: {
+    color: 'rgba(0, 0, 0, 1)',
+    fontSize: 12,
+    fontFamily: FontFamily.interSemiBold,
+  },
+  threeBtnSec: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginTop: 8,
+  },
+  bookMarkSec: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
   },
 });
 

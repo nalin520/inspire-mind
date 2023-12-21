@@ -71,7 +71,7 @@ const ClacessCard = () => {
       <Text>
         <Ionicons size={12} name="star" color={'gray'} />
         <Text style={styles.rating}>4.5</Text>
-        <Text style={styles.rating}>{` . 10 day Course`}</Text>
+        <Text style={styles.rating}>{` • 10 day Course`}</Text>
       </Text>
       <Text style={styles.text}>The Science of overcoming insomnia</Text>
       {/* <View style={styles.footerView}>
