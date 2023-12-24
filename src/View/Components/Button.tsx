@@ -3,9 +3,14 @@ import React, {Component} from 'react';
 import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 
 // create a component
-const Button = ({btnText, onPress}) => {
+const Button = ({btnText, onPress, backgroundColor}) => {
   return (
-    <TouchableOpacity onPress={onPress} style={styles.container}>
+    <TouchableOpacity
+      onPress={onPress}
+      style={[
+        styles.container,
+        {backgroundColor: backgroundColor ? backgroundColor : '#2A2EEC'},
+      ]}>
       <Text style={{color: '#fff', fontFamily: 'Inter-Bold', fontSize: 15}}>
         {btnText}
       </Text>
@@ -19,7 +24,7 @@ const styles = StyleSheet.create({
     // flex: 1,
     // justifyContent: 'center',
     // alignItems: 'center',
-    backgroundColor: '#2A2EEC',
+
     marginVertical: 10,
     width: '45%',
     paddingVertical: 15,

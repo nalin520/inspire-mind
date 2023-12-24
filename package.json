@@ -23,6 +23,7 @@
     "react-native": "0.73.0",
     "react-native-asset": "^2.1.1",
     "react-native-countdown-circle-timer": "^3.2.1",
+    "react-native-date-picker": "^4.3.5",
     "react-native-element-dropdown": "^2.10.1",
     "react-native-gesture-handler": "^2.14.0",
     "react-native-linear-gradient": "^2.8.3",
@@ -35,6 +36,7 @@
     "react-native-screens": "^3.29.0",
     "react-native-slider": "^0.11.0",
     "react-native-svg": "^14.1.0",
+    "react-native-swiper": "^1.6.0",
     "react-native-tab-view": "^3.5.2",
     "react-native-vector-icons": "^10.0.3",
     "react-redux": "^9.0.2"

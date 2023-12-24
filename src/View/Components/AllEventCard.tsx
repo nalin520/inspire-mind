@@ -80,7 +80,7 @@ const AllEventCard = () => {
               {`  English`}
             </Text>
           </Text>
-          <Text style={styles.text}>Bedtime Routine Ideas for a Be</Text>
+          <Text style={styles.text}>Bedtime Routine Ideas for a Bed</Text>
         </View>
         {/* <View style={styles.bookmarkIconContainer}> */}
         <TouchableOpacity

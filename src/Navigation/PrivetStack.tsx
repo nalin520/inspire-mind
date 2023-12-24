@@ -14,7 +14,6 @@ import EditProfile from '../View/Screens/Profile/EditProfile';
 import CustomizeStatus from '../View/Screens/Profile/CustomizeStatus';
 import SettingNotification from '../View/Screens/Profile/SettingNotification';
 import LoginAndEmail from '../View/Screens/Profile/LoginAndEmail';
-// import ConsultationProfile from '../View/Screens/BookConsultation/ConsultationProfile';
 import MaterialTabViewStack from './MaterialTabView';
 import SleepTab from './SleepTab';
 import Details from '../View/Screens/Sleep/Details';
@@ -22,12 +21,21 @@ import TrackPlayer from '../View/Screens/Sleep/TrackPlayer';
 import AllEvent from '../View/Screens/Events/AllEvent';
 import EventDetails from '../View/Screens/Events/EventDetails';
 import EventTab from './EventTab';
+import PreferededPlan from '../View/Screens/BookConsultation/Preferedplan';
+import PlanSelect from '../View/Screens/BookConsultation/PlanSelection';
+import DateSelect from '../View/Screens/BookConsultation/DateSelection';
+import Appointment from '../View/Screens/BookConsultation/AppointmentPreview';
+import IntervalBell from '../View/Screens/Home/IntervalBell';
+import AddBell from '../View/Screens/Home/AddBell';
+import IntervalBellList from '../View/Screens/Home/IntervalBellList';
+import Timer from '../View/Screens/Home/Timer';
 const Stack = createStackNavigator();
 
 const PrivetStack = () => {
   return (
     <Stack.Navigator
-      initialRouteName="event_allEvent"
+      // initialRouteName="event_allEvent"
+      initialRouteName="add_bell"
       screenOptions={{headerShown: false}}>
       <Stack.Screen name="welcome" component={Welcome} />
       <Stack.Screen name="home" component={Home} />
@@ -50,6 +58,14 @@ const PrivetStack = () => {
       <Stack.Screen name="event_allEvent" component={AllEvent} />
       <Stack.Screen name="event_eventdetails" component={EventDetails} />
       <Stack.Screen name="event_eventTab" component={EventTab} />
+      <Stack.Screen name="prefered_plan" component={PreferededPlan} />
+      <Stack.Screen name="plan_select" component={PlanSelect} />
+      <Stack.Screen name="date_select" component={DateSelect} />
+      <Stack.Screen name="appointment" component={Appointment} />
+      <Stack.Screen name="interval_bell" component={IntervalBell} />
+      <Stack.Screen name="add_bell" component={AddBell} />
+      <Stack.Screen name="add_bell_list" component={IntervalBellList} />
+      <Stack.Screen name="timer" component={Timer} />
     </Stack.Navigator>
   );
 };
