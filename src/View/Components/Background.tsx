@@ -26,7 +26,7 @@ export const Background: React.FC<PropsWithChildren> = prop => {
       style={{
         width: wp(100),
         height: hp(100),
-        backgroundColor: '#fff',
+        backgroundColor: '#afaaaa',
         alignItems: 'center',
       }}>
       <View style={{width: wp(90), height: hp(90)}}>{prop.children}</View>

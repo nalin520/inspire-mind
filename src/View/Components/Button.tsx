@@ -1,14 +1,20 @@
-//import liraries
-import React, {Component} from 'react';
-import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
+//import libraries
+import React from 'react';
+import {ActivityIndicator} from 'react-native';
+import {Text, StyleSheet, TouchableOpacity} from 'react-native';
 
 // create a component
-const Button = ({btnText, onPress}) => {
+const Button = ({btnText, isLoading, disabled, ...rest}: any) => {
   return (
-    <TouchableOpacity onPress={onPress} style={styles.container}>
-      <Text style={{color: '#fff', fontFamily: 'Inter-Bold', fontSize: 15}}>
-        {btnText}
-      </Text>
+    <TouchableOpacity
+      style={styles.container}
+      disabled={disabled || isLoading}
+      {...rest}>
+      {isLoading ? (
+        <ActivityIndicator />
+      ) : (
+        <Text style={styles.btnText}>{btnText}</Text>
+      )}
     </TouchableOpacity>
   );
 };
@@ -16,9 +22,6 @@ const Button = ({btnText, onPress}) => {
 // define your styles
 const styles = StyleSheet.create({
   container: {
-    // flex: 1,
-    // justifyContent: 'center',
-    // alignItems: 'center',
     backgroundColor: '#2A2EEC',
     marginVertical: 10,
     width: '45%',
@@ -26,6 +29,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     alignSelf: 'center',
     borderRadius: 10,
+  },
+  btnText: {
+    color: '#fff',
+    fontFamily: 'Inter-Bold',
+    fontSize: 15,
   },
 });
 
