@@ -12,6 +12,11 @@ import LoginAndEmail from '../View/Screens/Profile/LoginAndEmail';
 import MaterialTabViewStack from './MaterialTabView';
 import SleepTab from './SleepTab';
 import Details from '../View/Screens/Sleep/Details';
+import TrackPlayer from '../View/Screens/Sleep/TrackPlayer';
+import AllEvent from '../View/Screens/Events/AllEvent';
+import EventDetails from '../View/Screens/Events/EventDetails';
+import EventTab from './EventTab';
+import Timer from '../View/Screens/Home/Timer';
 const Stack = createStackNavigator();
 
 const PrivetStack = () => {
@@ -21,6 +26,8 @@ const PrivetStack = () => {
       screenOptions={{headerShown: false}}>
       <Stack.Screen name="welcome" component={Welcome} />
       <Stack.Screen name="home" component={Home} />
+      <Stack.Screen name="home_timer" component={Timer} />
+
       <Stack.Screen name="profile_account" component={Account} />
       <Stack.Screen name="profile_setting" component={Setting} />
       <Stack.Screen name="profile_edit" component={EditProfile} />
@@ -36,6 +43,10 @@ const PrivetStack = () => {
       <Stack.Screen name="consultant_tab" component={MaterialTabViewStack} />
       <Stack.Screen name="sleep_tab" component={SleepTab} />
       <Stack.Screen name="details" component={Details} />
+      <Stack.Screen name="sleep_track_player" component={TrackPlayer} />
+      <Stack.Screen name="event_allEvent" component={AllEvent} />
+      <Stack.Screen name="event_eventdetails" component={EventDetails} />
+      <Stack.Screen name="event_eventTab" component={EventTab} />
     </Stack.Navigator>
   );
 };

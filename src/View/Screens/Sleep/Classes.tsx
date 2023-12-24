@@ -1,23 +1,120 @@
 //import liraries
 import React, {Component} from 'react';
-import {View, Text, StyleSheet} from 'react-native';
-
+import {
+  View,
+  Text,
+  StyleSheet,
+  ScrollView,
+  TouchableOpacity,
+  FlatList,
+} from 'react-native';
+import ConsultationCard from '../../Components/ConsultationCard';
+import ClacessCard from '../../Components/ClacessCard';
+import ProfileCard from '../../Components/ProfileCard';
+const data = [
+  {
+    id: 0,
+    name: 'Sort',
+  },
+  {
+    id: 1,
+    name: 'Length',
+  },
+  {
+    id: 2,
+    name: 'Filter',
+  },
+  {
+    id: 3,
+    name: 'Bookmark',
+  },
+];
+const data2 = [
+  {
+    id: 0,
+    name: 'Morning Routines',
+    image: require('../../../Assets/Img/Sun.png'),
+    tags: ['Yoga', 'Meditation'],
+  },
+  {
+    id: 1,
+    name: 'Stress',
+    image: require('../../../Assets/Img/moon.png'),
+    tags: ['Yoga', 'Meditation'],
+  },
+  {
+    id: 2,
+    name: 'Sleep',
+    image: require('../../../Assets/Img/sleep.png'),
+    tags: ['Yoga', 'Meditation'],
+  },
+  {
+    id: 3,
+    name: 'Anxiety',
+    image: require('../../../Assets/Img/head.png'),
+    tags: ['Yoga', 'Meditation'],
+  },
+  {
+    id: 4,
+    name: 'Parenting',
+    image: require('../../../Assets/Img/group.png'),
+    tags: ['Yoga', 'Meditation'],
+  },
+  {
+    id: 5,
+    name: 'Religion',
+    image: require('../../../Assets/Img/hand.png'),
+    tags: ['Yoga', 'Meditation'],
+  },
+];
 // create a component
-const Classes = () => {
+const Classes = ({navigation}) => {
   return (
-    <View style={styles.container}>
-      <Text>Classes</Text>
-    </View>
+    <ScrollView style={styles.container}>
+      <ScrollView
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        style={styles.btnContainer}>
+        {data.map(item => (
+          <TouchableOpacity
+            style={styles.btnView}
+            key={item.id.toString()}
+            onPress={() => handleFilter(item.id)}>
+            <Text style={styles.btnText}>{item.name}</Text>
+          </TouchableOpacity>
+        ))}
+      </ScrollView>
+      <FlatList data={data2} renderItem={() => <ClacessCard />} />
+      <View style={{paddingBottom: 30}} />
+    </ScrollView>
   );
 };
 
 // define your styles
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#2c3e50',
+    backgroundColor: '#fff',
+    paddingTop: 30,
+    paddingHorizontal: 20,
+  },
+  btnView: {
+    borderWidth: 1.5,
+    borderColor: 'black',
+    paddingHorizontal: 15,
+    paddingVertical: 4,
+    borderRadius: 7,
+    marginRight: 15,
+  },
+
+  btnContainer: {},
+  btnText: {
+    fontFamily: 'Inter-Light',
+    color: 'black',
+    fontSize: 14,
+  },
+  list: {
+    gap: 12,
+    paddingVertical: 16,
   },
 });
 

@@ -16,7 +16,7 @@ import Track from '../View/Screens/Sleep/Track';
 import Video from '../View/Screens/Sleep/Video';
 import Classes from '../View/Screens/Sleep/Classes';
 import CustomHeader from '../View/Components/CustomHeader';
-
+import Reading from '../View/Screens/Sleep/Reading';
 const Tab = createMaterialTopTabNavigator();
 
 const SleepTab = () => {
@@ -63,6 +63,7 @@ const SleepTab = () => {
             <Tab.Screen name="TRACK" component={Track} />
             <Tab.Screen name="VIDEO" component={Video} />
             <Tab.Screen name="CLASSES" component={Classes} />
+            <Tab.Screen name="READING" component={Reading} />
           </Tab.Navigator>
         </View>
       </SafeAreaView>

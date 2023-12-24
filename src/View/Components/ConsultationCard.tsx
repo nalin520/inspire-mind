@@ -12,6 +12,9 @@ interface IConsultationCard {
   value: string;
   bookmarkColor: string;
   videoText: string;
+  playBtnColor: string;
+  bookmarkIconColor: string;
+  bookmarkBackgroundColor: string;
   onPress: any;
 }
 
@@ -23,6 +26,9 @@ const ConsultationCard = ({
   bookmarkColor,
   videoText,
   onPress,
+  playBtnColor,
+  bookmarkBackgroundColor,
+  bookmarkIconColor,
 }: IConsultationCard) => {
   return (
     <TouchableOpacity onPress={onPress} style={styles.container}>
@@ -30,7 +36,11 @@ const ConsultationCard = ({
         <Image source={require('../../Assets/Img/videoImage.png')} />
         {!value && (
           <View style={styles.playIconContainer}>
-            <Ionicons name="play-outline" size={20} color="#fff" />
+            <Ionicons
+              name="play-outline"
+              size={20}
+              color={playBtnColor ? playBtnColor : '#fff'}
+            />
           </View>
         )}
       </View>
@@ -39,7 +49,7 @@ const ConsultationCard = ({
         <Text>
           <Ionicons name="star" color={'gray'} />
           <Text style={styles.rating}>{rating}</Text>
-          <Text style={styles.rating}>{` . ${videoText}`}</Text>
+          {videoText && <Text style={styles.rating}>{` • ${videoText}`}</Text>}
         </Text>
         <Text numberOfLines={1} style={styles.title}>
           {title}
@@ -54,9 +64,18 @@ const ConsultationCard = ({
         <View
           style={[
             styles.bookmarkIconContainer,
-            {borderColor: bookmarkColor ? bookmarkColor : 'gray'},
+            {
+              borderColor: bookmarkColor ? bookmarkColor : 'gray',
+              backgroundColor: bookmarkBackgroundColor
+                ? bookmarkBackgroundColor
+                : '',
+            },
           ]}>
-          <Ionicons name="bookmark-outline" size={18} color={'gray'} />
+          <Ionicons
+            name="bookmark-outline"
+            size={18}
+            color={bookmarkIconColor ? bookmarkIconColor : 'gray'}
+          />
         </View>
       </View>
     </TouchableOpacity>
