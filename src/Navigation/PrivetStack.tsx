@@ -29,13 +29,16 @@ import IntervalBell from '../View/Screens/Home/IntervalBell';
 import AddBell from '../View/Screens/Home/AddBell';
 import IntervalBellList from '../View/Screens/Home/IntervalBellList';
 import Timer from '../View/Screens/Home/Timer';
+import Journal from '../View/Screens/Journal/Journal';
+import JournalText from '../View/Screens/Journal/JournalText';
+import JournalAudio from '../View/Screens/Journal/JournalAudio';
 const Stack = createStackNavigator();
 
 const PrivetStack = () => {
   return (
     <Stack.Navigator
       // initialRouteName="event_allEvent"
-      initialRouteName="add_bell"
+      initialRouteName="journal_audio"
       screenOptions={{headerShown: false}}>
       <Stack.Screen name="welcome" component={Welcome} />
       <Stack.Screen name="home" component={Home} />
@@ -66,6 +69,9 @@ const PrivetStack = () => {
       <Stack.Screen name="add_bell" component={AddBell} />
       <Stack.Screen name="add_bell_list" component={IntervalBellList} />
       <Stack.Screen name="timer" component={Timer} />
+      <Stack.Screen name="journal" component={Journal} />
+      <Stack.Screen name="journal_text" component={JournalText} />
+      <Stack.Screen name="journal_audio" component={JournalAudio} />
     </Stack.Navigator>
   );
 };
