@@ -1,21 +1,20 @@
 import React from 'react';
 import {Provider} from 'react-redux';
 import {store} from './src/Adapter/Redux/Store';
-//asdf
 
 import AppNavigation from './src/Navigation/AppNavigation';
 import {NavigationContainer} from '@react-navigation/native';
-import {PaperProvider} from 'react-native-paper';
-// import WelcomeOne from './src/View/Screens/Welcome/WelcomeOne';
+import ThemeProvider from './src/theme';
+
 function App(): React.JSX.Element {
   return (
-    <PaperProvider>
+    <ThemeProvider>
       <NavigationContainer>
         <Provider store={store}>
           <AppNavigation />
         </Provider>
       </NavigationContainer>
-    </PaperProvider>
+    </ThemeProvider>
   );
 }
 

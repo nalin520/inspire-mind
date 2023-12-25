@@ -9,10 +9,12 @@ import {useTranslation} from 'react-i18next';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {TOKEN_NAME} from '../../../Constant/storage';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import {useAppTheme} from '../../../theme';
 
 export const Welcome = ({navigation}: any) => {
   const [hasAuth, setHasAuth] = useState<boolean>(false);
   const {t} = useTranslation();
+  const {colors} = useAppTheme();
 
   useEffect(() => {
     async function checkAuth() {
@@ -28,7 +30,7 @@ export const Welcome = ({navigation}: any) => {
   }, []);
 
   const handleSkip = () => {
-    if (hasAuth) {
+    if (!hasAuth) {
       navigation.replace('privetStack', {
         screen: 'home',
       });
@@ -40,13 +42,18 @@ export const Welcome = ({navigation}: any) => {
   };
 
   return (
-    <View style={styles.root}>
+    <View style={[styles.root, {backgroundColor: colors.background}]}>
       <View style={styles.container}>
         <BlankSpacer height={hp(20)} />
-        <Text style={styles.brandNameText}>{t(lngKey.BrandName)}</Text>
+        <Text style={[styles.brandNameText, {color: colors.onBackground}]}>
+          {t(lngKey.BrandName)}
+        </Text>
         <Text style={styles.Slogan}>{t(lngKey.Slogan)}</Text>
         <BlankSpacer height={hp(16)} />
-        <NativeText text={lngKey.Quote} style={styles.Quote} />
+        <NativeText
+          text={lngKey.Quote}
+          style={[styles.Quote, {color: colors.onBackground}]}
+        />
         <NativeText text={lngKey.QuoteBy} style={styles.QuoteBy} />
       </View>
       <Pressable onPress={handleSkip} style={styles.SkipBtn}>
@@ -73,7 +80,6 @@ const styles = StyleSheet.create({
     lineHeight: 41,
     fontWeight: 'bold',
     fontSize: 25,
-    color: 'black',
   },
   Slogan: {
     fontSize: 13,
@@ -86,7 +92,6 @@ const styles = StyleSheet.create({
     fontWeight: '500',
     lineHeight: 26,
     textAlign: 'center',
-    color: 'black',
     marginBottom: 10,
   },
   QuoteBy: {

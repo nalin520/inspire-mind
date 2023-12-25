@@ -11,13 +11,6 @@ export interface ITextField extends ICustomInput {
   rules?: any;
 }
 
-const getText = (text: any) => {
-  if (text) {
-    return text;
-  }
-  return 'This is required.';
-};
-
 export default function TextField({control, name, rules, ...rest}: ITextField) {
   return (
     <Controller
@@ -33,9 +26,7 @@ export default function TextField({control, name, rules, ...rest}: ITextField) {
             {...rest}
           />
           {errors[name] && (
-            <Text style={styles.errorText}>
-              {getText(errors[name]?.message)}
-            </Text>
+            <Text style={styles.errorText}>This is required.</Text>
           )}
         </View>
       )}

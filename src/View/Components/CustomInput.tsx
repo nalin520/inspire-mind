@@ -1,12 +1,19 @@
 //import libraries
 import React from 'react';
-import {StyleSheet, TextInput} from 'react-native';
+import {StyleSheet, TextInput, TextInputProps} from 'react-native';
 import {Color} from '../../styles/globalStyle';
+import {useAppTheme} from '../../theme';
+
+export interface ICustomInput extends TextInputProps {
+  color?: string;
+}
 
 // create a component
-const CustomInput = ({placeholder, color, ...rest}: any) => {
+const CustomInput = ({placeholder, color, ...rest}: ICustomInput) => {
+  const {colors} = useAppTheme();
+
   const customStyle = {
-    borderColor: color ? color : '#9C9C9C',
+    borderColor: color ? color : colors.outline,
   };
 
   return (
@@ -29,6 +36,7 @@ const styles = StyleSheet.create({
     color: Color.colorBlack,
     fontSize: 15,
     paddingHorizontal: 20,
+    overflow: 'hidden',
   },
 });
 

@@ -1,6 +1,5 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
-import {Welcome} from '../View/Screens/Welcome/Welcome';
 import Home from '../View/Screens/Home/Home';
 import Account from '../View/Screens/Profile/Account';
 import Setting from '../View/Screens/Profile/Setting';
@@ -24,7 +23,6 @@ const PrivetStack = () => {
     <Stack.Navigator
       initialRouteName="sleep_tab"
       screenOptions={{headerShown: false}}>
-      <Stack.Screen name="welcome" component={Welcome} />
       <Stack.Screen name="home" component={Home} />
       <Stack.Screen name="home_timer" component={Timer} />
 
